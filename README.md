@@ -19,7 +19,7 @@ Modify the `config.py` file in the `instance` directory if needed.
 Run a Postgres instance in a docker container:
 
 ```shell
-docker run -p 5432:5432 --rm --name explain -e POSTGRES_PASSWORD=postgres -d postgres
+docker run -p 5433:5432 --rm --name explain -e POSTGRES_PASSWORD=postgres -d postgres
 ```
 
 Create the DB:
@@ -41,7 +41,7 @@ docker compose up -d
 docker compose run web flask db upgrade
 ```
 
-Open [http://0.0.0.0:5000/](http://0.0.0.0:5000/) in your browser.
+Open [http://0.0.0.0:5001/](http://0.0.0.0:5001/) in your browser.
 
 # Build assets
 
