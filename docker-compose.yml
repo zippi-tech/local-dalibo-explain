@@ -4,7 +4,7 @@ services:
     restart: always
     image: dalibo/explain.dalibo.com:latest
     ports:
-      - "5000:5000"
+      - "5001:5000"
     links:
       - postgres:postgres
     volumes:
@@ -12,6 +12,7 @@ services:
     environment:
       DEBUG_TB_PROFILER_ENABLED: true
       DB_SERVICE: postgres
+      SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://postgres:postgres@postgres:5432/postgres
 
   postgres:
     restart: always
@@ -19,7 +20,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_PASSWORD: postgres
 
